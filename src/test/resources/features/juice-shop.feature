@@ -3,15 +3,14 @@ Feature: Juice Shop Actions
     Given I am on the "Home" page
     And   I click "Dismiss button"
     And   I click "Me want it button"
-
-  @run
+@run
   Scenario: Set items per page
     When I click "Items per page"
     And  I click "Option 24"
     Then I see "Item list" with the following data:
       | Amount |
       | 24     |
-
+@run
   Scenario: Search for 500ml
     When I search for "500ml"
     Then I see "search results" with the following data:
@@ -19,7 +18,7 @@ Feature: Juice Shop Actions
       | Eggfruit Juice (500ml)   | Now with even more exotic flavour. | 8.99  |
       | Lemon Juice (500ml)      | Sour but full of vitamins.         | 2.99  |
       | Strawberry Juice (500ml) | Sweet & tasty!                     | 3.99  |
-
+@run
   Scenario: Find comment
     When I search for "King of the Hill"
     And  I "open item" with the following data:
@@ -27,7 +26,7 @@ Feature: Juice Shop Actions
       | King of the Hill |
     And  I click "Reviews expand"
     Then "Comment section" should contain "K33p5 y0ur ju1cy 5plu773r 70 y0ur53lf!"
-
+@run
   Scenario: Add comment
     When I "log in" with the following data:
       | Email | Password |
@@ -41,7 +40,7 @@ Feature: Juice Shop Actions
     And  I click "Submit Button"
     And  I click "Reviews Expand"
     Then "Comment section" should contain "Travel to Norway for more info"
-
+@run
   Scenario: Create new Juice Shop user
     When I click "Account button"
     And  I click "Login button"
@@ -55,7 +54,7 @@ Feature: Juice Shop Actions
     And  I click "Registration button"
     Then I should be on "Login" page
     And  "Registration completed successfully." should be "visible"
-
+@run
   Scenario Outline: Change language
     When I "log in" with the following data:
       | Email | Password |
